@@ -18,4 +18,10 @@ repoControllers.get("/:id", (req: Request, res: Response) => {
   }
 });
 
+repoControllers.post("/", (req: Request, res: Response) => {
+  const repo: Repo = req.body;
+  repos.push(repo);
+  res.status(201).json(repo);
+});
+
 export default repoControllers;

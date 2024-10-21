@@ -18,4 +18,10 @@ langControllers.get("/:id", (req: Request, res: Response) => {
   }
 });
 
+langControllers.post("/", (req: Request, res: Response) => {
+  const lang: Lang = req.body;
+  langs.push(lang);
+  res.status(201).json(lang);
+});
+
 export default langControllers;
